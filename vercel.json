@@ -3,7 +3,7 @@
   "name": "ai-chinese-learning-assistant",
   "builds": [
     {
-      "src": "*.html",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
