@@ -1,26 +1,11 @@
 {
   "version": 2,
   "name": "ai-chinese-learning-assistant",
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/proxy.js": {
+      "runtime": "nodejs18.x"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  },
   "headers": [
     {
       "source": "/(.*)",
