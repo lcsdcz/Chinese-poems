@@ -1,0 +1,38 @@
+{
+  "name": "ai-chinese-learning-assistant",
+  "version": "1.0.0",
+  "description": "AI语文学习助手 - 古诗文默写与AI辅助学习平台",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000",
+    "dev": "npx live-server --port=3000",
+    "build": "echo 'Static site, no build required'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "chinese",
+    "poetry",
+    "ai",
+    "learning",
+    "education",
+    "openai",
+    "gpt"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-chinese-learning-assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ai-chinese-learning-assistant/issues"
+  },
+  "homepage": "https://github.com/yourusername/ai-chinese-learning-assistant#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

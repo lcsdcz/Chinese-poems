@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高中语文早读助手 - 古诗文背诵默写</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -26,7 +28,60 @@
                     <p>高考理解性默写真题</p>
                     <span class="poem-count">50+道真题</span>
                 </div>
+                <!-- 添加AI辅助学习按钮 -->
+                <div class="chapter-card" onclick="showAIAssistant()">
+                    <h3><i class="fas fa-robot"></i> AI辅助学习</h3>
+                    <p>智能问答、知识扩展</p>
+                    <span class="poem-count">智能助手</span>
+                </div>
             </div>
+        </div>
+
+        <!-- AI辅助学习界面 -->
+        <div id="ai-assistant" class="ai-assistant-page" style="display: none;">
+            <div class="ai-header">
+                <h2><i class="fas fa-robot"></i> AI语文学习助手</h2>
+                <p>输入诗句、诗人或名人，获取相关知识、背景和名人名言</p>
+            </div>
+            
+            <div class="ai-chat-container">
+                <div class="ai-chat-messages" id="ai-chat-messages">
+                    <div class="ai-message ai-system">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-content">
+                            <p>你好！我是你的AI语文学习助手。我可以帮你：</p>
+                            <ul>
+                                <li>解释诗句的含义和背景</li>
+                                <li>介绍诗人的生平和作品</li>
+                                <li>分享相关的名人名言</li>
+                                <li>提供学习建议和记忆方法</li>
+                            </ul>
+                            <p>请告诉我你想了解什么？</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-input-container">
+                    <div class="ai-input-wrapper">
+                        <input type="text" id="ai-input" placeholder="输入诗句、诗人或名人..." class="ai-input">
+                        <button onclick="sendAIMessage()" class="ai-send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="ai-quick-actions">
+                        <button class="ai-quick-btn" onclick="askAI('李白')">李白</button>
+                        <button class="ai-quick-btn" onclick="askAI('静夜思')">静夜思</button>
+                        <button class="ai-quick-btn" onclick="askAI('论语')">论语</button>
+                        <button class="ai-quick-btn" onclick="askAI('苏轼')">苏轼</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="back-btn" onclick="backToChapter()">
+                <i class="fas fa-arrow-left"></i> 返回章节选择
+            </button>
         </div>
 
         <div class="poem-selection" id="poemSelection" style="display: none;">
@@ -79,5 +134,6 @@
     <script src="poems-data.js"></script>
     <script src="comprehensive-data.js"></script>
     <script src="script.js"></script>
+    <script src="ai-script.js"></script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "name": "ai-chinese-learning-assistant",
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key",
+    "OPENAI_API_URL": "https://api.openai.com/v1/chat/completions",
+    "OPENAI_MODEL": "gpt-3.5-turbo"
+  }
+}

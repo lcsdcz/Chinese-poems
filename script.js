@@ -1096,8 +1096,12 @@ function backToChapter() {
     currentPoemIndex = 0;
     poems = [];
     
+    // 隐藏所有页面
     document.getElementById('poemSelection').style.display = 'none';
     document.getElementById('recitationPage').style.display = 'none';
+    document.getElementById('ai-assistant').style.display = 'none';
+    
+    // 显示章节选择页面
     document.getElementById('chapterSelection').style.display = 'block';
 }
 
